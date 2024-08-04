@@ -11,7 +11,7 @@ resource "aws_service_discovery_private_dns_namespace" "default" {
   )
 }
 
-resource "aws_service_discovery_public_dns_namespace" "example" {
+resource "aws_service_discovery_public_dns_namespace" "default" {
   count = var.service_connect_configuration != null ? (var.service_connect_configuration.vpc_id == null ? 1 : 0) : 0
   name        = var.service_connect_configuration.namespace
   description =var.service_connect_configuration.description

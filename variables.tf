@@ -6,7 +6,7 @@ variable "tags" {
         Provisioner = string
         Region      = string
     })
-    description = "ecs services and tasks tags"
+    description = "cloudmap tags"
 }
 
 variable "ecs_cluster_arn" {
@@ -16,7 +16,6 @@ variable "ecs_cluster_arn" {
 
 variable "service_connect_configuration" {
   type = object({
-    enabled = bool
     namespace = string
     description = string
     vpc_id = string
