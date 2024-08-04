@@ -9,17 +9,19 @@ variable "tags" {
     description = "cloudmap tags"
 }
 
-variable "ecs_cluster_arn" {
-  type        = string
-  description = "The ARN of the ECS cluster where service will be provisioned"
+variable "namespace" {
+  type = string
+  description = "service connect configuration namespace for inter service communication"
 }
 
-variable "service_connect_configuration" {
-  type = object({
-    namespace = string
-    description = string
-    vpc_id = string
-  })
+variable "description" {
+  type = string
   default = null
-  description = "service connect configuration for inter service communication"
+  description = "service connect configuration description for inter service communication"
+}
+
+variable "vpc_id" {
+  type = string
+  default = null
+  description = "service connect configuration vpc id for inter service communication"
 }
